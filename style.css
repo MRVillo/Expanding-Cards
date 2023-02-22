@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Muli, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+   margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 90vw;
+    
+}
+.panel{
+    background-size: cover; /*Si el tamaño del fondo es contener o cubrir: conservando sus proporciones intrínsecas, la imagen se representa en el tamaño más grande contenido dentro o cubriendo el área de posicionamiento del fondo.*/
+    background-position: center; /*La propiedad CSS background-position establece la posición inicial de cada imagen de fondo. La posición es relativa a la capa de posición establecida por background-origin .*/
+    background-repeat: no-repeat; /*La propiedad background-repeat en CSS se usa para repetir la imagen de fondo tanto horizontal como verticalmente. También decide si la imagen de fondo se repetirá o no.*/
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer; /*The "Pointer" or "Mouse Pointer": It is the graphical object that moves on screen. */
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    -webkit-transition: all 700ms ease-in;
+}
+
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+
+}
+.panel.active{
+flex: 5;
+}
+.panel :hover{
+ width: 100px;
+}
+
+
+
+
+
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.2s ease-in 0.5s;
+}
+
+@media(max-width:480px){
+    .container{
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+}
